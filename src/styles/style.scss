@@ -65,3 +65,15 @@
         }
     }
 }
+
+@media screen and (max-width:480px){
+    #root{
+    form{
+        grid-template-columns: 1fr;
+
+        padding-bottom: 10px;
+        button{
+            right: 20px;
+        }
+    }}
+}
