@@ -1,6 +1,8 @@
 function affichage(date2){
     const DAY_TIME = 3600 * 24 * 1000;
     const today = new Date();
+    if(today<date2)
+        return
     // reset sur date du jour
     today.setHours(0);
     today.setMinutes(0);

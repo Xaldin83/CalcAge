@@ -17,25 +17,31 @@ export default function Age(){
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <input 
-                    type="text"
-                    value={year}    
-                    onChange={(e) => setYear(e.target.value)}
-                    placeholder="Entrez une Année" 
-                />
-                <input 
-                    type="text"
-                    value={mounth}    
-                    onChange={(e) => setMounth(e.target.value)}
-                    placeholder="Entrez un Mois" 
-                />
-                <input 
-                    type="text"
-                    value={day}    
-                    onChange={(e) => setDay(e.target.value)}
-                    placeholder="Entrez un Jour" 
-                />
-                <button type="submit">Rechercher</button>
+                <div>
+                    <label >Jour</label>
+                    <input 
+                        type="text"
+                        value={day}    
+                        onChange={(e) => setDay(e.target.value)}
+                    />
+                </div>
+                <div>
+                    <label >Mois</label>
+                    <input 
+                        type="text"
+                        value={mounth}    
+                        onChange={(e) => setMounth(e.target.value)}
+                    />
+                </div>
+                <div>
+                    <label >Année</label>
+                    <input 
+                        type="text"
+                        value={year}    
+                        onChange={(e) => setYear(e.target.value)}
+                    />
+                </div>
+                <button type="submit"><span>&#8595;</span></button>
             </form>
 
             {loading && <p>Chargement...</p>}
@@ -43,9 +49,9 @@ export default function Age(){
 
                 
                 <div>
-                    <p>Année : {age?.years ?? '--'}</p>
-                    <p>Mois : {age?.months?? '--'}</p>
-                    <p>Jour : {age?.days??'--'}</p>
+                    <p><span>{age?.years ?? '--'}</span> années</p>
+                    <p><span>{age?.months?? '--'}</span> mois</p>
+                    <p><span>{age?.days??'--'}</span> jours</p>
                 </div>
         </div>
     )
