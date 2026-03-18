@@ -54,19 +54,19 @@ function affichage(date2){
     return ecart
 }
 
-export function calculDate(day, mounth, year){
-            let date=new Date()
-            console.log(date, day, mounth,year)
-            if(mounth in ["02","04","06","09","11"]){
-                console.log("kiwi")
+export function calculDate(year, mounth, day){
+            if(!year || !mounth ||!day)
+                return
+            if(mounth in ["02","04","06","09","11"])
                 if(parseInt(day)>=31)
-                    return}
-            if(parseInt(day)>31){
-                console.log("Pomme")
-                return}
+                    return
+            if(parseInt(day)>31)
+                return
+            if((parseInt(mounth)>12) ||(parseInt(mounth)<1))
+                return
 
-            let date2 = new Date(parseInt(year), parseInt(mounth),parseInt(day))
-            const dateTotale=affichage(date2)
-            console.log(dateTotale)
+            let date = new Date(parseInt(year), parseInt(mounth)-1,parseInt(day))
+            const dateTotale=affichage(date)
+            return dateTotale
 }
 

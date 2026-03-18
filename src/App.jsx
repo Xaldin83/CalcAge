@@ -9,7 +9,6 @@ function App() {
     <AgeGlobal/>
     </>
   )
-  // AgeGlobal("16","01","1987")
   
   }
 
